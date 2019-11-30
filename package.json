@@ -6,7 +6,11 @@
   "scripts": {
     "start": "webpack",
     "dev": "webpack-dev-server --open",
-    "test-connect": "babel-node src/server/connect-db"
+    "server": "babel-node src/server/server",
+    "test-connect": "babel-node src/server/connect-db",
+    "initialize-db": "babel-node src/server/initialize-db",
+    "test-server": "babel-node src/server/server.spec.js",
+    "start-dev": "concurrently \"npm run server\" \"npm run dev\""
   },
   "keywords": [
     "react",
@@ -57,10 +61,5 @@
     "style-loader": "^0.23.1",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
-  },
-  "babel": {
-    "presets": [
-      "babel-preset-react-app"
-    ]
   }
 }
